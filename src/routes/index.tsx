@@ -190,6 +190,8 @@ function Index() {
   const [copied, setCopied] = useState(false);
   const stage = stageDetails[activeStage];
 
+  if (!stage) return null;
+
   async function copyCode() {
     try {
       await navigator.clipboard.writeText(stage.code);
