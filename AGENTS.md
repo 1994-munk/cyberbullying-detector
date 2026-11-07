@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project structure
+- Keep the cyberbully-detection walkthrough on the home route and its runnable Python starter files in `public/project/`, so lessons and downloads stay together.
