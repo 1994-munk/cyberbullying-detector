@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/cyberbullying_demo.gif" alt="Cyberbullying detector demo animation" width="980" />
+  <img src="assets/cyberbullying_demo.gif" alt="Colorful animated scene showing a shield mascot flagging hurtful messages and encouraging kindness online" width="980" />
 </div>
 
 # 🛡️ Cyberbullying Detector
