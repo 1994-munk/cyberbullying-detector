@@ -1,32 +1,25 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
 
-node_modules
-dist
-dist-ssr
-.output
-.vinxi
-.tanstack/**
-.nitro
-*.local
+# Jupyter
+.ipynb_checkpoints/
 
-# Wrangler / Cloudflare
-.wrangler/
-.dev.vars
+# Model artifacts and notebooks outputs
+*.joblib
+*.pkl
+*.model
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Local config
+.env
+.env.*
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# IDE metadata
+.vscode/
+.idea/

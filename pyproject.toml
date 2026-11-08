@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cyberbullying-detector"
+version = "0.1.0"
+description = "Python project for detecting cyber-aggressive language in social media text."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.2.0",
+  "numpy>=1.26.0",
+  "scikit-learn>=1.4.0",
+  "joblib>=1.4.0",
+  "matplotlib>=3.8.0",
+  "jupyter>=1.0.0",
+  "notebook>=7.0.0",
+]
+
+[tool.setuptools]
+packages = ["cyberbullying_detector"]
