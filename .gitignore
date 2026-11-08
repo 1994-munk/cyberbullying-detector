@@ -10,7 +10,12 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
-# Model artifacts and notebooks outputs
+# Data files and model artifacts
+data/*.json
+data/*.csv
+data/*.tsv
+data/*.parquet
+data/*.pkl
 *.joblib
 *.pkl
 *.model

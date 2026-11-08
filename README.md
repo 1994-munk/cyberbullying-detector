@@ -10,34 +10,34 @@
   <img alt="Scikit-learn" src="https://img.shields.io/badge/Scikit--Learn-1.4%2B-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" />
 </p>
 
-This project builds a practical machine-learning workflow for spotting cyber-aggressive language in social media text. It walks through the full pipeline: loading the dataset, cleaning the comments, fixing label issues, splitting data safely, training a text model, and evaluating the results.
+This project uses machine learning to detect harmful and aggressive language in social media comments. It is built as a practical Python + Jupyter workflow that takes a raw dataset, cleans the text, trains a text classifier, and evaluates how well it can flag cyberbullying patterns.
 
-It is designed as a learning project and a research starter, not as an automated moderation verdict system. The model is a helpful signal for review, not a replacement for human judgment.
+The purpose is educational and research-oriented: the system helps identify risky language for human review, but it is not a final judgment on a person or a substitute for common sense and context.
 
-## ✨ What this project does
+## 🌈 Why this project matters
 
-- Loads a JSON-lines dataset of social media messages and labels.
-- Cleans text by normalizing whitespace and handling missing values.
-- Filters invalid and conflicting labels before training.
-- Splits the data so the evaluation stays fair.
-- Trains a TF-IDF + logistic regression classifier.
-- Saves the trained pipeline for future predictions.
-- Includes a Jupyter notebook to walk through the workflow step by step.
+Cyberbullying can damage confidence, safety, and mental well-being. By training a model on real examples of aggressive language, this project shows how AI can help communities flag harmful content earlier and support safer online spaces.
 
-## 🎨 Why this matters
+## ✨ What the project does
 
-Cyberbullying is a harmful pattern of online aggression that can escalate quickly and affect mental health, community trust, and safety. This project gives a transparent, beginner-friendly entry point into how text classifiers can help detect harmful language while keeping human oversight in the loop.
+- Loads tweet data from a JSON-lines dataset
+- Extracts text and labels from the raw records
+- Cleans text by normalizing whitespace and HTML content
+- Removes invalid or conflicting labels before training
+- Splits the dataset into train/test sets
+- Trains a TF-IDF + logistic regression model
+- Evaluates performance with precision, recall, F1-score, and confusion matrix
+- Saves the trained model for later use
+- Includes a notebook with clear, commented code for learning
 
 ## 🧠 Model approach
 
-The project uses a classic and explainable baseline:
+This project uses a simple but effective supervised learning workflow:
 
-- TF-IDF vectorizer for text feature extraction
-- Logistic regression classifier for fast, interpretable predictions
-- Class-balanced training for better handling of skewed labels
-- Evaluation metrics including precision, recall, F1-score, and confusion matrix
-
-This is a strong baseline for education and experimentation, and it is easy to extend with more advanced models later.
+- TF-IDF converts text into numerical features
+- Logistic regression learns the pattern between aggressive and non-aggressive comments
+- Class balancing helps the model better handle skewed label distributions
+- The model is easy to understand and easy to improve later
 
 ## 📁 Project structure
 
@@ -54,8 +54,10 @@ cyberbullying-detector/
 │   └── cyberbullying_detector.ipynb
 ├── assets/
 │   └── cyberbullying_demo.gif
-└── data/
-    └── Dataset_for_Detection_of_Cyber-Trolls_1.json
+├── data/
+│   ├── README.md
+│   └── Dataset_for_Detection_of_Cyber-Trolls_1.json
+└── cyberbully_baseline.joblib
 ```
 
 ## 🚀 Quick start
@@ -79,7 +81,7 @@ On Windows:
 pip install -r requirements.txt
 ```
 
-### 3) Run the notebook
+### 3) Open the notebook
 
 ```bash
 jupyter notebook notebooks/cyberbullying_detector.ipynb
@@ -91,40 +93,42 @@ jupyter notebook notebooks/cyberbullying_detector.ipynb
 python train_model.py --dataset data/Dataset_for_Detection_of_Cyber-Trolls_1.json --output cyberbully_baseline.joblib
 ```
 
-## 🔎 Notebook workflow
+## 📓 Notebook workflow
 
-The notebook covers the full process:
+The notebook includes clear sections for:
 
-1. Data inspection and label review
-2. Text cleaning and normalization
-3. Duplicate and conflicting-label handling
-4. Train/test splitting
-5. Model training
-6. Evaluation and model export
+1. Loading and inspecting the raw dataset
+2. Extracting content and labels
+3. Cleaning text and filtering bad rows
+4. Removing conflicting duplicate entries
+5. Splitting into train/test data
+6. Training the classifier
+7. Evaluating model results
+8. Saving the model for future predictions
 
 ## ⚠️ Important note
 
-This repository focuses on detecting cyber-aggressive language as a signal for review. It does not prove that a person is bullying someone, and it should never be used as the sole basis for punishment or public shaming.
+This project is designed to detect harmful and aggressive language as a signal for review, not to prove that a person is a bully. Human context, tone, and intent are crucial. The model should support moderation decisions, not replace them.
 
-## 🧪 Example output
+## 🧪 Sample output
 
 ```text
               precision    recall  f1-score   support
 
-           0       0.90      0.91      0.90      1600
-           1       0.72      0.69      0.70       650
+  non-aggressive       0.90      0.77      0.83      2358
+cyber-aggressive       0.39      0.63      0.48       552
 
-    accuracy                           0.86      2250
-    macro avg       0.81      0.80      0.80      2250
-weighted avg       0.86      0.86      0.86      2250
+        accuracy                           0.74      2910
+       macro avg       0.64      0.70      0.65      2910
+    weighted avg       0.80      0.74      0.76      2910
 ```
 
 ## 🧾 License
 
-This project is for educational and research use.
+This project is intended for educational and research use.
 
 ---
 
 <p align="center">
-  <strong>Built for safer online communities through transparent AI and human review.</strong>
+  <strong>Built for safer online communities with AI for early detection and human review.</strong>
 </p>
